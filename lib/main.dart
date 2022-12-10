@@ -5,6 +5,7 @@ import 'package:polihack/users/driver.dart';
 
 void main() => runApp(MaterialApp(
       home: Home(),
+      debugShowCheckedModeBanner: false,
     ));
 
 class Home extends StatefulWidget {
@@ -20,41 +21,49 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[200],
       bottomNavigationBar: BottomAppBar(
+          color: Colors.grey[200],
           child: Row(
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          ElevatedButton.icon(
-            onPressed: () {
-              setState(() {
-                currst = !currst;
-                current = currst ? '     Driver    ' : 'Passenger';
-                icoana = currst ? Icons.directions_car : Icons.people;
-              });
-            },
-            icon: Icon(icoana, size: 24.0),
-            label: Text(current),
-          ),
-          FloatingActionButton(
-            onPressed: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) =>
-                      currst ? DRoutes() : DriversList(title: "Drivers")));
-            },
-            backgroundColor: Colors.red,
-            child: const Icon(Icons.add),
-          ),
-          ElevatedButton.icon(
-            onPressed: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => currst ? DRoutes() : PRoutes()));
-            },
-            icon: Icon(Icons.location_pin, size: 24.0),
-            label: Text('    Route     '),
-          ),
-        ],
-      )),
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              ElevatedButton.icon(
+                onPressed: () {
+                  setState(() {
+                    currst = !currst;
+                    current = currst ? '     Driver    ' : 'Passenger';
+                    icoana = currst ? Icons.directions_car : Icons.people;
+                  });
+                },
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.amber, // Background color
+                ),
+                icon: Icon(icoana, size: 24.0),
+                label: Text(current),
+              ),
+              FloatingActionButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) =>
+                          currst ? DRoutes() : DriversList(title: "Drivers")));
+                },
+                backgroundColor: Colors.amber,
+                child: const Icon(Icons.add),
+              ),
+              ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => currst ? DRoutes() : PRoutes()));
+                },
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.amber, // Background color
+                ),
+                icon: Icon(Icons.location_pin, size: 24.0),
+                label: Text('    Route     '),
+              ),
+            ],
+          )),
       body: Center(),
     );
   }

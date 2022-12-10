@@ -19,12 +19,12 @@ class _PRoutesState extends State<PRoutes> {
       appBar: AppBar(
           title: Text('Test'),
           centerTitle: true,
-          backgroundColor: Colors.green[600]),
+          backgroundColor: Colors.amber[600]),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           // Add your onPressed code here!
         },
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.amber,
         child: const Icon(Icons.add),
       ),
     );

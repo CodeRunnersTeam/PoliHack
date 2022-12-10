@@ -19,12 +19,12 @@ class _DRoutesState extends State<DRoutes> {
       appBar: AppBar(
           title: Text('Test'),
           centerTitle: true,
-          backgroundColor: Colors.red[600]),
+          backgroundColor: Colors.amber[600]),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           // Add your onPressed code here!
         },
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.amber,
         child: const Icon(Icons.add),
       ),
     );

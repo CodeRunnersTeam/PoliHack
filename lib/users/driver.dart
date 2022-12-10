@@ -26,6 +26,7 @@ class _DriversList extends State<DriversList> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        backgroundColor: Colors.amber,
       ),
       body: ListView(
         children: drivers.map((st) {
