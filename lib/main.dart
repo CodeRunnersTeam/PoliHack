@@ -24,16 +24,26 @@ class _HomeState extends State<Home> {
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          ElevatedButton.icon(
+          ButtonTheme(
+              minWidth: 200.0,
+              height: 50.0,
+              child: ElevatedButton.icon(
+                onPressed: () {
+                  setState(() {
+                    currst = !currst;
+                    current = currst ? '     Driver    ' : 'Passenger';
+                    icoana = currst ? Icons.directions_car : Icons.people;
+                  });
+                },
+                icon: Icon(icoana, size: 24.0),
+                label: Text(current),
+              )),
+          FloatingActionButton(
             onPressed: () {
-              setState(() {
-                currst = !currst;
-                current = currst ? 'Driver' : 'Passenger';
-                icoana = currst ? Icons.directions_car : Icons.people;
-              });
+              // Add your onPressed code here!
             },
-            icon: Icon(icoana, size: 24.0),
-            label: Text(current),
+            backgroundColor: Colors.red,
+            child: const Icon(Icons.add),
           ),
           ElevatedButton.icon(
             onPressed: () {
@@ -41,7 +51,7 @@ class _HomeState extends State<Home> {
                   builder: (context) => currst ? DRoutes() : PRoutes()));
             },
             icon: Icon(Icons.location_pin, size: 24.0),
-            label: Text('Route'),
+            label: Text('    Route     '),
           ),
         ],
       )),
