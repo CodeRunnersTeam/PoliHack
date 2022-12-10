@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:polihack/driver_routes.dart';
-import 'package:polihack/passenger_routes.dart';
+import 'package:polihack/routes/driver_routes.dart';
+import 'package:polihack/routes/passenger_routes.dart';
 import 'package:polihack/users/driver.dart';
 
 void main() => runApp(MaterialApp(
